@@ -13,7 +13,7 @@ By: jt
 3) Relationship explanation here
 
 ## Code Error #2
-1) Changed the code 
+1) Changed the code to consider just `[Hello]` with no parantheses following up.
 
 ![Test Case 2](https://raw.githubusercontent.com/jt-ucsd/cse15l-lab-report-2/main/Lab%20Report%202%20-%20Error%202.jpg)
 
@@ -21,16 +21,16 @@ By: jt
 
 2) Error Output: 
 
-`Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 7
+``Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 7
    at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4601)
    at java.base/java.lang.String.substring(String.java:2704)
    at MarkdownParse.getLinks(MarkdownParse.java:28)
-   at MarkdownParse.main(MarkdownParse.java:39)`
+   at MarkdownParse.main(MarkdownParse.java:39)``
 
 3) Relationship explanation here
 
 ## Code Error #3
-1) Changed the code to consider the test case of an image link, which the markdown parse should ignore.
+1) Changed the code to consider just `(Hello)` and should not find any links.
 
 ![Test Case 3](https://raw.githubusercontent.com/jt-ucsd/cse15l-lab-report-2/main/Lab%20Report%202%20-%20Error%203.jpg)
 
