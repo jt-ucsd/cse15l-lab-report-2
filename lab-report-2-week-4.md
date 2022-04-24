@@ -10,7 +10,7 @@ By: jt
 
 2) Error Output: `[image.com]`
 
-3) Relationship explanation here
+3) For Test Case #1, the failure inducing input was `![image](image.com)`.  Inside of the program, there is a logical bug where it wouldn't consider the situation where an image is displayed and since it follows the same format as a regular link but with a `!` in front, it would try to get the link of both images and URLs when it should just be URLs.  The symptom is the output of `[image.com]` when it should be `[]`.
 
 ## Code Error #2
 1) Changed the code to consider just `[Hello]` with no parantheses following up.  Since there is no parantheses, the program should return `[]` as no links were found.
@@ -27,7 +27,7 @@ By: jt
    at MarkdownParse.getLinks(MarkdownParse.java:28)
    at MarkdownParse.main(MarkdownParse.java:39)`
 
-3) Relationship explanation here
+3) For test case #2, the failure inducing input that triggered the error was `[Hello]`.  The code had a logical error bug where it would loop and proceed through the file until it finds a link.  However, since it kept on proceeding through the file and there is no links, it would try to access an out of bound part of the text.  As a result, we see the out of bound symptom.
 
 ## Code Error #3
 1) Changed the code to consider just `(Hello)`.  Since it is just parantheses, there should be no links found and return `[]`.
@@ -38,4 +38,4 @@ By: jt
 
 2) Error Output: `[Hello]`
 
-3) Relationship explanation here
+3) For test case #3, the failure inducing input that triggered the error was `(Hello)`.  The code had a logical error, or bug, where anything between two `()` and saves it as a link even if it's not.  As a result, it would produce the symptom of `[Hello]` instead of `[]`.
